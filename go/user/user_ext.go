@@ -1,69 +1,69 @@
 package user
 
 type UserExt struct {
-	Email  string `json:"email" xorm:"'email' not null comment('邮箱') VARCHAR(50)"`
-	Phone  string `json:"phone" xorm:"'phone' not null comment('手机号码') VARCHAR(50)"`
 	UserId int64  `json:"user_id" xorm:"'user_id' not null pk comment('用户ID') BIGINT"`
+	Phone  string `json:"phone" xorm:"'phone' not null comment('手机号码') VARCHAR(50)"`
+	Email  string `json:"email" xorm:"'email' not null comment('邮箱') VARCHAR(50)"`
 	Wechat string `json:"wechat" xorm:"'wechat' not null comment('微信号') VARCHAR(50)"`
 }
 
 type UserExtHelper struct {
 }
 
-func (cols UserExtHelper) Email() string {
-	return "email"
+func (cols UserExtHelper) UserId() string {
+	return "user_id"
 }
 
-func (cols UserExtHelper) EmailWT() string {
-	return "user_ext.email"
+func (cols UserExtHelper) UserIdWT() string {
+	return "user_ext.user_id"
 }
 
-func (cols UserExtHelper) EqEmail() string {
-	return "email = ?"
+func (cols UserExtHelper) EqUserId() string {
+	return "user_id = ?"
 }
 
-func (cols UserExtHelper) EqEmailWT() string {
-	return "user_ext.email = ?"
+func (cols UserExtHelper) EqUserIdWT() string {
+	return "user_ext.user_id = ?"
 }
 
-func (cols UserExtHelper) NeEmail() string {
-	return "email != ?"
+func (cols UserExtHelper) NeUserId() string {
+	return "user_id != ?"
 }
 
-func (cols UserExtHelper) NeEmailWT() string {
-	return "user_ext.email != ?"
+func (cols UserExtHelper) NeUserIdWT() string {
+	return "user_ext.user_id != ?"
 }
 
-func (cols UserExtHelper) GtEmail() string {
-	return "email > ?"
+func (cols UserExtHelper) GtUserId() string {
+	return "user_id > ?"
 }
 
-func (cols UserExtHelper) GtEmailWT() string {
-	return "user_ext.email > ?"
+func (cols UserExtHelper) GtUserIdWT() string {
+	return "user_ext.user_id > ?"
 }
 
-func (cols UserExtHelper) GteEmail() string {
-	return "email >= ?"
+func (cols UserExtHelper) GteUserId() string {
+	return "user_id >= ?"
 }
 
-func (cols UserExtHelper) GteEmailWT() string {
-	return "user_ext.email >= ?"
+func (cols UserExtHelper) GteUserIdWT() string {
+	return "user_ext.user_id >= ?"
 }
 
-func (cols UserExtHelper) LtEmail() string {
-	return "email < ?"
+func (cols UserExtHelper) LtUserId() string {
+	return "user_id < ?"
 }
 
-func (cols UserExtHelper) LtEmailWT() string {
-	return "user_ext.email < ?"
+func (cols UserExtHelper) LtUserIdWT() string {
+	return "user_ext.user_id < ?"
 }
 
-func (cols UserExtHelper) LteEmail() string {
-	return "email <= ?"
+func (cols UserExtHelper) LteUserId() string {
+	return "user_id <= ?"
 }
 
-func (cols UserExtHelper) LteEmailWT() string {
-	return "user_ext.email <= ?"
+func (cols UserExtHelper) LteUserIdWT() string {
+	return "user_ext.user_id <= ?"
 }
 
 func (cols UserExtHelper) Phone() string {
@@ -122,60 +122,60 @@ func (cols UserExtHelper) LtePhoneWT() string {
 	return "user_ext.phone <= ?"
 }
 
-func (cols UserExtHelper) UserId() string {
-	return "user_id"
+func (cols UserExtHelper) Email() string {
+	return "email"
 }
 
-func (cols UserExtHelper) UserIdWT() string {
-	return "user_ext.user_id"
+func (cols UserExtHelper) EmailWT() string {
+	return "user_ext.email"
 }
 
-func (cols UserExtHelper) EqUserId() string {
-	return "user_id = ?"
+func (cols UserExtHelper) EqEmail() string {
+	return "email = ?"
 }
 
-func (cols UserExtHelper) EqUserIdWT() string {
-	return "user_ext.user_id = ?"
+func (cols UserExtHelper) EqEmailWT() string {
+	return "user_ext.email = ?"
 }
 
-func (cols UserExtHelper) NeUserId() string {
-	return "user_id != ?"
+func (cols UserExtHelper) NeEmail() string {
+	return "email != ?"
 }
 
-func (cols UserExtHelper) NeUserIdWT() string {
-	return "user_ext.user_id != ?"
+func (cols UserExtHelper) NeEmailWT() string {
+	return "user_ext.email != ?"
 }
 
-func (cols UserExtHelper) GtUserId() string {
-	return "user_id > ?"
+func (cols UserExtHelper) GtEmail() string {
+	return "email > ?"
 }
 
-func (cols UserExtHelper) GtUserIdWT() string {
-	return "user_ext.user_id > ?"
+func (cols UserExtHelper) GtEmailWT() string {
+	return "user_ext.email > ?"
 }
 
-func (cols UserExtHelper) GteUserId() string {
-	return "user_id >= ?"
+func (cols UserExtHelper) GteEmail() string {
+	return "email >= ?"
 }
 
-func (cols UserExtHelper) GteUserIdWT() string {
-	return "user_ext.user_id >= ?"
+func (cols UserExtHelper) GteEmailWT() string {
+	return "user_ext.email >= ?"
 }
 
-func (cols UserExtHelper) LtUserId() string {
-	return "user_id < ?"
+func (cols UserExtHelper) LtEmail() string {
+	return "email < ?"
 }
 
-func (cols UserExtHelper) LtUserIdWT() string {
-	return "user_ext.user_id < ?"
+func (cols UserExtHelper) LtEmailWT() string {
+	return "user_ext.email < ?"
 }
 
-func (cols UserExtHelper) LteUserId() string {
-	return "user_id <= ?"
+func (cols UserExtHelper) LteEmail() string {
+	return "email <= ?"
 }
 
-func (cols UserExtHelper) LteUserIdWT() string {
-	return "user_ext.user_id <= ?"
+func (cols UserExtHelper) LteEmailWT() string {
+	return "user_ext.email <= ?"
 }
 
 func (cols UserExtHelper) Wechat() string {
