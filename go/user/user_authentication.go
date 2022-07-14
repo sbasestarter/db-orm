@@ -2,7 +2,7 @@ package user
 
 type UserAuthentication struct {
 	UserId   int64  `json:"user_id" xorm:"'user_id' not null pk comment('用户ID') BIGINT"`
-	Password string `json:"password" xorm:"'password' not null comment('密码') VARCHAR(100)"`
+	Password string `json:"password" xorm:"'password' not null comment('用户密码') VARCHAR(100)"`
 	Token2fa string `json:"token_2fa" xorm:"'token_2fa' not null comment('二次验证token') VARCHAR(256)"`
 }
 

@@ -1,1 +1,1 @@
-xorm reverse mysql "root:mysql_root_default_pass1@tcp(dev.env:8306)/user?charset=utf8mb4" templates/goxorm go/user
+xorm reverse mysql "root:mysql_root_default_pass@tcp(env.dev:8406)/user?charset=utf8mb4" templates/goxorm go/user
