@@ -1,10 +1,10 @@
 package user
 
 type UserSource struct {
-	Id       int64  `json:"id" xorm:"'id' pk autoincr comment('用户ID') BIGINT"`
-	UserName string `json:"user_name" xorm:"'user_name' not null comment('用户名') unique(name_ve) VARCHAR(100)"`
-	UserVe   string `json:"user_ve" xorm:"'user_ve' not null comment('用户验证设备类型') unique(name_ve) VARCHAR(50)"`
-	UserId   int64  `json:"user_id" xorm:"'user_id' not null default 0 comment('关联的实际用户ID') BIGINT"`
+	Id       int64  `json:"id" xorm:"pk autoincr comment('用户ID') BIGINT"`
+	UserName string `json:"user_name" xorm:"not null comment('用户名') unique(name_ve) VARCHAR(100)"`
+	UserVe   string `json:"user_ve" xorm:"not null comment('用户验证设备类型') unique(name_ve) VARCHAR(50)"`
+	UserId   int64  `json:"user_id" xorm:"not null default 0 comment('关联的实际用户ID') BIGINT"`
 }
 
 type UserSourceHelper struct {

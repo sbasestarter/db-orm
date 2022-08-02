@@ -1,10 +1,10 @@
 package user
 
 type UserTrust struct {
-	Id     int64  `json:"id" xorm:"'id' pk autoincr BIGINT"`
-	UserId int64  `json:"user_id" xorm:"'user_id' not null comment('用户ID') unique(id_ip) BIGINT"`
-	Ip     string `json:"ip" xorm:"'ip' not null comment('IP地址') unique(id_ip) VARCHAR(50)"`
-	Cnt    int    `json:"cnt" xorm:"'cnt' not null comment('登录次数') INT"`
+	Id     int64  `json:"id" xorm:"pk autoincr BIGINT"`
+	UserId int64  `json:"user_id" xorm:"not null comment('用户ID') unique(id_ip) BIGINT"`
+	Ip     string `json:"ip" xorm:"not null comment('IP地址') unique(id_ip) VARCHAR(50)"`
+	Cnt    int    `json:"cnt" xorm:"not null comment('登录次数') INT"`
 }
 
 type UserTrustHelper struct {

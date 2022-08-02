@@ -5,11 +5,11 @@ import (
 )
 
 type UserInfo struct {
-	UserId     int64     `json:"user_id" xorm:"'user_id' not null pk autoincr comment('用户ID') BIGINT"`
-	NickName   string    `json:"nick_name" xorm:"'nick_name' not null comment('昵称') unique VARCHAR(100)"`
-	Avatar     string    `json:"avatar" xorm:"'avatar' not null comment('头像') TEXT"`
-	CreateAt   time.Time `json:"create_at" xorm:"'create_at' not null comment('创建时间') DATETIME"`
-	Privileges int       `json:"privileges" xorm:"'privileges' not null comment('权限位') INT"`
+	UserId     int64     `json:"user_id" xorm:"not null pk autoincr comment('用户ID') BIGINT"`
+	NickName   string    `json:"nick_name" xorm:"not null comment('昵称') unique VARCHAR(100)"`
+	Avatar     string    `json:"avatar" xorm:"not null comment('头像') TEXT"`
+	CreateAt   time.Time `json:"create_at" xorm:"not null comment('创建时间') DATETIME"`
+	Privileges int       `json:"privileges" xorm:"not null comment('权限位') INT"`
 }
 
 type UserInfoHelper struct {

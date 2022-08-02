@@ -1,10 +1,10 @@
 package user
 
 type UserExt struct {
-	UserId int64  `json:"user_id" xorm:"'user_id' not null pk comment('用户ID') BIGINT"`
-	Phone  string `json:"phone" xorm:"'phone' not null comment('手机号码') VARCHAR(50)"`
-	Email  string `json:"email" xorm:"'email' not null comment('邮箱') VARCHAR(50)"`
-	Wechat string `json:"wechat" xorm:"'wechat' not null comment('微信号') VARCHAR(50)"`
+	UserId int64  `json:"user_id" xorm:"not null pk comment('用户ID') BIGINT"`
+	Phone  string `json:"phone" xorm:"not null comment('手机号码') VARCHAR(50)"`
+	Email  string `json:"email" xorm:"not null comment('邮箱') VARCHAR(50)"`
+	Wechat string `json:"wechat" xorm:"not null comment('微信号') VARCHAR(50)"`
 }
 
 type UserExtHelper struct {
