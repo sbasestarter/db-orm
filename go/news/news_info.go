@@ -12,6 +12,7 @@ type NewsInfo struct {
 	ImagesJson  string    `json:"images_json" xorm:"not null TEXT"`
 	CreatedAt   time.Time `json:"created_at" xorm:"not null created DATETIME"`
 	PublishedAt time.Time `json:"published_at" xorm:"not null DATETIME"`
+	CategoryId  int       `json:"category_id" xorm:"not null INT"`
 }
 
 type NewsInfoHelper struct {
@@ -407,6 +408,62 @@ func (cols NewsInfoHelper) LtePublishedAt() string {
 
 func (cols NewsInfoHelper) LtePublishedAtWT() string {
 	return "news_info.published_at <= ?"
+}
+
+func (cols NewsInfoHelper) CategoryId() string {
+	return "category_id"
+}
+
+func (cols NewsInfoHelper) CategoryIdWT() string {
+	return "news_info.category_id"
+}
+
+func (cols NewsInfoHelper) EqCategoryId() string {
+	return "category_id = ?"
+}
+
+func (cols NewsInfoHelper) EqCategoryIdWT() string {
+	return "news_info.category_id = ?"
+}
+
+func (cols NewsInfoHelper) NeCategoryId() string {
+	return "category_id != ?"
+}
+
+func (cols NewsInfoHelper) NeCategoryIdWT() string {
+	return "news_info.category_id != ?"
+}
+
+func (cols NewsInfoHelper) GtCategoryId() string {
+	return "category_id > ?"
+}
+
+func (cols NewsInfoHelper) GtCategoryIdWT() string {
+	return "news_info.category_id > ?"
+}
+
+func (cols NewsInfoHelper) GteCategoryId() string {
+	return "category_id >= ?"
+}
+
+func (cols NewsInfoHelper) GteCategoryIdWT() string {
+	return "news_info.category_id >= ?"
+}
+
+func (cols NewsInfoHelper) LtCategoryId() string {
+	return "category_id < ?"
+}
+
+func (cols NewsInfoHelper) LtCategoryIdWT() string {
+	return "news_info.category_id < ?"
+}
+
+func (cols NewsInfoHelper) LteCategoryId() string {
+	return "category_id <= ?"
+}
+
+func (cols NewsInfoHelper) LteCategoryIdWT() string {
+	return "news_info.category_id <= ?"
 }
 
 func (cols NewsInfoHelper) TableName() string {
