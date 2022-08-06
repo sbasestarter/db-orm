@@ -11,7 +11,7 @@ type NewsInfo struct {
 	ImagesJson  string    `json:"images_json" xorm:"not null TEXT"`
 	CreatedAt   time.Time `json:"created_at" xorm:"not null created DATETIME"`
 	PublishedAt time.Time `json:"published_at" xorm:"not null DATETIME"`
-	CategoryId  int64     `json:"category_id" xorm:"not null BIGINT"`
+	CategoryId  int       `json:"category_id" xorm:"not null INT"`
 }
 
 type NewsInfoHelper struct {
