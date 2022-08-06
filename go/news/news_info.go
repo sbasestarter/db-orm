@@ -6,7 +6,6 @@ import (
 
 type NewsInfo struct {
 	Id          int       `json:"id" xorm:"not null pk autoincr INT"`
-	Source      string    `json:"source" xorm:"VARCHAR(255)"`
 	Title       string    `json:"title" xorm:"not null VARCHAR(512)"`
 	Summary     string    `json:"summary" xorm:"not null TEXT"`
 	ImagesJson  string    `json:"images_json" xorm:"not null TEXT"`
@@ -72,62 +71,6 @@ func (cols NewsInfoHelper) LteId() string {
 
 func (cols NewsInfoHelper) LteIdWT() string {
 	return "news_info.id <= ?"
-}
-
-func (cols NewsInfoHelper) Source() string {
-	return "source"
-}
-
-func (cols NewsInfoHelper) SourceWT() string {
-	return "news_info.source"
-}
-
-func (cols NewsInfoHelper) EqSource() string {
-	return "source = ?"
-}
-
-func (cols NewsInfoHelper) EqSourceWT() string {
-	return "news_info.source = ?"
-}
-
-func (cols NewsInfoHelper) NeSource() string {
-	return "source != ?"
-}
-
-func (cols NewsInfoHelper) NeSourceWT() string {
-	return "news_info.source != ?"
-}
-
-func (cols NewsInfoHelper) GtSource() string {
-	return "source > ?"
-}
-
-func (cols NewsInfoHelper) GtSourceWT() string {
-	return "news_info.source > ?"
-}
-
-func (cols NewsInfoHelper) GteSource() string {
-	return "source >= ?"
-}
-
-func (cols NewsInfoHelper) GteSourceWT() string {
-	return "news_info.source >= ?"
-}
-
-func (cols NewsInfoHelper) LtSource() string {
-	return "source < ?"
-}
-
-func (cols NewsInfoHelper) LtSourceWT() string {
-	return "news_info.source < ?"
-}
-
-func (cols NewsInfoHelper) LteSource() string {
-	return "source <= ?"
-}
-
-func (cols NewsInfoHelper) LteSourceWT() string {
-	return "news_info.source <= ?"
 }
 
 func (cols NewsInfoHelper) Title() string {
