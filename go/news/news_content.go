@@ -1,7 +1,7 @@
 package news
 
 type NewsContent struct {
-	Id      int    `json:"id" xorm:"not null pk INT"`
+	Id      int64  `json:"id" xorm:"pk BIGINT"`
 	Content string `json:"content" xorm:"MEDIUMTEXT"`
 }
 

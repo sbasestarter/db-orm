@@ -5,13 +5,13 @@ import (
 )
 
 type NewsInfo struct {
-	Id          int       `json:"id" xorm:"not null pk autoincr INT"`
+	Id          int64     `json:"id" xorm:"pk autoincr BIGINT"`
 	Title       string    `json:"title" xorm:"not null VARCHAR(512)"`
 	Summary     string    `json:"summary" xorm:"not null TEXT"`
 	ImagesJson  string    `json:"images_json" xorm:"not null TEXT"`
 	CreatedAt   time.Time `json:"created_at" xorm:"not null created DATETIME"`
 	PublishedAt time.Time `json:"published_at" xorm:"not null DATETIME"`
-	CategoryId  int       `json:"category_id" xorm:"not null INT"`
+	CategoryId  int64     `json:"category_id" xorm:"not null BIGINT"`
 }
 
 type NewsInfoHelper struct {
