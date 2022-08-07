@@ -2,9 +2,9 @@ package user
 
 type UserSource struct {
 	Id       int64  `json:"id" xorm:"pk autoincr comment('用户ID') BIGINT"`
-	UserId   int64  `json:"user_id" xorm:"not null default 0 comment('关联的实际用户ID') BIGINT"`
 	UserName string `json:"user_name" xorm:"not null comment('用户名') unique(name_ve) VARCHAR(100)"`
 	UserVe   string `json:"user_ve" xorm:"not null comment('用户验证设备类型') unique(name_ve) VARCHAR(50)"`
+	UserId   int64  `json:"user_id" xorm:"not null default 0 comment('关联的实际用户ID') BIGINT"`
 }
 
 type UserSourceHelper struct {
@@ -24,14 +24,6 @@ func (cols UserSourceHelper) EqId() string {
 
 func (cols UserSourceHelper) EqIdWT() string {
 	return "user_source.id = ?"
-}
-
-func (cols UserSourceHelper) InId() string {
-	return "id in ?"
-}
-
-func (cols UserSourceHelper) InIdWT() string {
-	return "user_source.id in ?"
 }
 
 func (cols UserSourceHelper) NeId() string {
@@ -74,70 +66,6 @@ func (cols UserSourceHelper) LteIdWT() string {
 	return "user_source.id <= ?"
 }
 
-func (cols UserSourceHelper) UserId() string {
-	return "user_id"
-}
-
-func (cols UserSourceHelper) UserIdWT() string {
-	return "user_source.user_id"
-}
-
-func (cols UserSourceHelper) EqUserId() string {
-	return "user_id = ?"
-}
-
-func (cols UserSourceHelper) EqUserIdWT() string {
-	return "user_source.user_id = ?"
-}
-
-func (cols UserSourceHelper) InUserId() string {
-	return "user_id in ?"
-}
-
-func (cols UserSourceHelper) InUserIdWT() string {
-	return "user_source.user_id in ?"
-}
-
-func (cols UserSourceHelper) NeUserId() string {
-	return "user_id != ?"
-}
-
-func (cols UserSourceHelper) NeUserIdWT() string {
-	return "user_source.user_id != ?"
-}
-
-func (cols UserSourceHelper) GtUserId() string {
-	return "user_id > ?"
-}
-
-func (cols UserSourceHelper) GtUserIdWT() string {
-	return "user_source.user_id > ?"
-}
-
-func (cols UserSourceHelper) GteUserId() string {
-	return "user_id >= ?"
-}
-
-func (cols UserSourceHelper) GteUserIdWT() string {
-	return "user_source.user_id >= ?"
-}
-
-func (cols UserSourceHelper) LtUserId() string {
-	return "user_id < ?"
-}
-
-func (cols UserSourceHelper) LtUserIdWT() string {
-	return "user_source.user_id < ?"
-}
-
-func (cols UserSourceHelper) LteUserId() string {
-	return "user_id <= ?"
-}
-
-func (cols UserSourceHelper) LteUserIdWT() string {
-	return "user_source.user_id <= ?"
-}
-
 func (cols UserSourceHelper) UserName() string {
 	return "user_name"
 }
@@ -152,14 +80,6 @@ func (cols UserSourceHelper) EqUserName() string {
 
 func (cols UserSourceHelper) EqUserNameWT() string {
 	return "user_source.user_name = ?"
-}
-
-func (cols UserSourceHelper) InUserName() string {
-	return "user_name in ?"
-}
-
-func (cols UserSourceHelper) InUserNameWT() string {
-	return "user_source.user_name in ?"
 }
 
 func (cols UserSourceHelper) NeUserName() string {
@@ -218,14 +138,6 @@ func (cols UserSourceHelper) EqUserVeWT() string {
 	return "user_source.user_ve = ?"
 }
 
-func (cols UserSourceHelper) InUserVe() string {
-	return "user_ve in ?"
-}
-
-func (cols UserSourceHelper) InUserVeWT() string {
-	return "user_source.user_ve in ?"
-}
-
 func (cols UserSourceHelper) NeUserVe() string {
 	return "user_ve != ?"
 }
@@ -264,6 +176,62 @@ func (cols UserSourceHelper) LteUserVe() string {
 
 func (cols UserSourceHelper) LteUserVeWT() string {
 	return "user_source.user_ve <= ?"
+}
+
+func (cols UserSourceHelper) UserId() string {
+	return "user_id"
+}
+
+func (cols UserSourceHelper) UserIdWT() string {
+	return "user_source.user_id"
+}
+
+func (cols UserSourceHelper) EqUserId() string {
+	return "user_id = ?"
+}
+
+func (cols UserSourceHelper) EqUserIdWT() string {
+	return "user_source.user_id = ?"
+}
+
+func (cols UserSourceHelper) NeUserId() string {
+	return "user_id != ?"
+}
+
+func (cols UserSourceHelper) NeUserIdWT() string {
+	return "user_source.user_id != ?"
+}
+
+func (cols UserSourceHelper) GtUserId() string {
+	return "user_id > ?"
+}
+
+func (cols UserSourceHelper) GtUserIdWT() string {
+	return "user_source.user_id > ?"
+}
+
+func (cols UserSourceHelper) GteUserId() string {
+	return "user_id >= ?"
+}
+
+func (cols UserSourceHelper) GteUserIdWT() string {
+	return "user_source.user_id >= ?"
+}
+
+func (cols UserSourceHelper) LtUserId() string {
+	return "user_id < ?"
+}
+
+func (cols UserSourceHelper) LtUserIdWT() string {
+	return "user_source.user_id < ?"
+}
+
+func (cols UserSourceHelper) LteUserId() string {
+	return "user_id <= ?"
+}
+
+func (cols UserSourceHelper) LteUserIdWT() string {
+	return "user_source.user_id <= ?"
 }
 
 func (cols UserSourceHelper) TableName() string {

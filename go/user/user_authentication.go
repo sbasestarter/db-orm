@@ -1,12 +1,68 @@
 package user
 
 type UserAuthentication struct {
+	UserId   int64  `json:"user_id" xorm:"not null pk comment('用户ID') BIGINT"`
 	Password string `json:"password" xorm:"not null comment('用户密码') VARCHAR(100)"`
 	Token2fa string `json:"token_2fa" xorm:"not null comment('二次验证token') VARCHAR(256)"`
-	UserId   int64  `json:"user_id" xorm:"not null pk comment('用户ID') BIGINT"`
 }
 
 type UserAuthenticationHelper struct {
+}
+
+func (cols UserAuthenticationHelper) UserId() string {
+	return "user_id"
+}
+
+func (cols UserAuthenticationHelper) UserIdWT() string {
+	return "user_authentication.user_id"
+}
+
+func (cols UserAuthenticationHelper) EqUserId() string {
+	return "user_id = ?"
+}
+
+func (cols UserAuthenticationHelper) EqUserIdWT() string {
+	return "user_authentication.user_id = ?"
+}
+
+func (cols UserAuthenticationHelper) NeUserId() string {
+	return "user_id != ?"
+}
+
+func (cols UserAuthenticationHelper) NeUserIdWT() string {
+	return "user_authentication.user_id != ?"
+}
+
+func (cols UserAuthenticationHelper) GtUserId() string {
+	return "user_id > ?"
+}
+
+func (cols UserAuthenticationHelper) GtUserIdWT() string {
+	return "user_authentication.user_id > ?"
+}
+
+func (cols UserAuthenticationHelper) GteUserId() string {
+	return "user_id >= ?"
+}
+
+func (cols UserAuthenticationHelper) GteUserIdWT() string {
+	return "user_authentication.user_id >= ?"
+}
+
+func (cols UserAuthenticationHelper) LtUserId() string {
+	return "user_id < ?"
+}
+
+func (cols UserAuthenticationHelper) LtUserIdWT() string {
+	return "user_authentication.user_id < ?"
+}
+
+func (cols UserAuthenticationHelper) LteUserId() string {
+	return "user_id <= ?"
+}
+
+func (cols UserAuthenticationHelper) LteUserIdWT() string {
+	return "user_authentication.user_id <= ?"
 }
 
 func (cols UserAuthenticationHelper) Password() string {
@@ -23,14 +79,6 @@ func (cols UserAuthenticationHelper) EqPassword() string {
 
 func (cols UserAuthenticationHelper) EqPasswordWT() string {
 	return "user_authentication.password = ?"
-}
-
-func (cols UserAuthenticationHelper) InPassword() string {
-	return "password in ?"
-}
-
-func (cols UserAuthenticationHelper) InPasswordWT() string {
-	return "user_authentication.password in ?"
 }
 
 func (cols UserAuthenticationHelper) NePassword() string {
@@ -89,14 +137,6 @@ func (cols UserAuthenticationHelper) EqToken2faWT() string {
 	return "user_authentication.token_2fa = ?"
 }
 
-func (cols UserAuthenticationHelper) InToken2fa() string {
-	return "token_2fa in ?"
-}
-
-func (cols UserAuthenticationHelper) InToken2faWT() string {
-	return "user_authentication.token_2fa in ?"
-}
-
 func (cols UserAuthenticationHelper) NeToken2fa() string {
 	return "token_2fa != ?"
 }
@@ -135,70 +175,6 @@ func (cols UserAuthenticationHelper) LteToken2fa() string {
 
 func (cols UserAuthenticationHelper) LteToken2faWT() string {
 	return "user_authentication.token_2fa <= ?"
-}
-
-func (cols UserAuthenticationHelper) UserId() string {
-	return "user_id"
-}
-
-func (cols UserAuthenticationHelper) UserIdWT() string {
-	return "user_authentication.user_id"
-}
-
-func (cols UserAuthenticationHelper) EqUserId() string {
-	return "user_id = ?"
-}
-
-func (cols UserAuthenticationHelper) EqUserIdWT() string {
-	return "user_authentication.user_id = ?"
-}
-
-func (cols UserAuthenticationHelper) InUserId() string {
-	return "user_id in ?"
-}
-
-func (cols UserAuthenticationHelper) InUserIdWT() string {
-	return "user_authentication.user_id in ?"
-}
-
-func (cols UserAuthenticationHelper) NeUserId() string {
-	return "user_id != ?"
-}
-
-func (cols UserAuthenticationHelper) NeUserIdWT() string {
-	return "user_authentication.user_id != ?"
-}
-
-func (cols UserAuthenticationHelper) GtUserId() string {
-	return "user_id > ?"
-}
-
-func (cols UserAuthenticationHelper) GtUserIdWT() string {
-	return "user_authentication.user_id > ?"
-}
-
-func (cols UserAuthenticationHelper) GteUserId() string {
-	return "user_id >= ?"
-}
-
-func (cols UserAuthenticationHelper) GteUserIdWT() string {
-	return "user_authentication.user_id >= ?"
-}
-
-func (cols UserAuthenticationHelper) LtUserId() string {
-	return "user_id < ?"
-}
-
-func (cols UserAuthenticationHelper) LtUserIdWT() string {
-	return "user_authentication.user_id < ?"
-}
-
-func (cols UserAuthenticationHelper) LteUserId() string {
-	return "user_id <= ?"
-}
-
-func (cols UserAuthenticationHelper) LteUserIdWT() string {
-	return "user_authentication.user_id <= ?"
 }
 
 func (cols UserAuthenticationHelper) TableName() string {
