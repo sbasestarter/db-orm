@@ -24,6 +24,14 @@ func (cols CategoryHelper) EqIdWT() string {
 	return "category.id = ?"
 }
 
+func (cols CategoryHelper) InId() string {
+	return "id in ?"
+}
+
+func (cols CategoryHelper) InIdWT() string {
+	return "category.id in ?"
+}
+
 func (cols CategoryHelper) NeId() string {
 	return "id != ?"
 }
@@ -78,6 +86,14 @@ func (cols CategoryHelper) EqName() string {
 
 func (cols CategoryHelper) EqNameWT() string {
 	return "category.name = ?"
+}
+
+func (cols CategoryHelper) InName() string {
+	return "name in ?"
+}
+
+func (cols CategoryHelper) InNameWT() string {
+	return "category.name in ?"
 }
 
 func (cols CategoryHelper) NeName() string {

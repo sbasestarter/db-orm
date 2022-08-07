@@ -1,67 +1,11 @@
 package news
 
 type NewsContent struct {
-	Id      int64  `json:"id" xorm:"pk BIGINT"`
 	Content string `json:"content" xorm:"MEDIUMTEXT"`
+	Id      int64  `json:"id" xorm:"pk BIGINT"`
 }
 
 type NewsContentHelper struct {
-}
-
-func (cols NewsContentHelper) Id() string {
-	return "id"
-}
-
-func (cols NewsContentHelper) IdWT() string {
-	return "news_content.id"
-}
-
-func (cols NewsContentHelper) EqId() string {
-	return "id = ?"
-}
-
-func (cols NewsContentHelper) EqIdWT() string {
-	return "news_content.id = ?"
-}
-
-func (cols NewsContentHelper) NeId() string {
-	return "id != ?"
-}
-
-func (cols NewsContentHelper) NeIdWT() string {
-	return "news_content.id != ?"
-}
-
-func (cols NewsContentHelper) GtId() string {
-	return "id > ?"
-}
-
-func (cols NewsContentHelper) GtIdWT() string {
-	return "news_content.id > ?"
-}
-
-func (cols NewsContentHelper) GteId() string {
-	return "id >= ?"
-}
-
-func (cols NewsContentHelper) GteIdWT() string {
-	return "news_content.id >= ?"
-}
-
-func (cols NewsContentHelper) LtId() string {
-	return "id < ?"
-}
-
-func (cols NewsContentHelper) LtIdWT() string {
-	return "news_content.id < ?"
-}
-
-func (cols NewsContentHelper) LteId() string {
-	return "id <= ?"
-}
-
-func (cols NewsContentHelper) LteIdWT() string {
-	return "news_content.id <= ?"
 }
 
 func (cols NewsContentHelper) Content() string {
@@ -78,6 +22,14 @@ func (cols NewsContentHelper) EqContent() string {
 
 func (cols NewsContentHelper) EqContentWT() string {
 	return "news_content.content = ?"
+}
+
+func (cols NewsContentHelper) InContent() string {
+	return "content in ?"
+}
+
+func (cols NewsContentHelper) InContentWT() string {
+	return "news_content.content in ?"
 }
 
 func (cols NewsContentHelper) NeContent() string {
@@ -118,6 +70,70 @@ func (cols NewsContentHelper) LteContent() string {
 
 func (cols NewsContentHelper) LteContentWT() string {
 	return "news_content.content <= ?"
+}
+
+func (cols NewsContentHelper) Id() string {
+	return "id"
+}
+
+func (cols NewsContentHelper) IdWT() string {
+	return "news_content.id"
+}
+
+func (cols NewsContentHelper) EqId() string {
+	return "id = ?"
+}
+
+func (cols NewsContentHelper) EqIdWT() string {
+	return "news_content.id = ?"
+}
+
+func (cols NewsContentHelper) InId() string {
+	return "id in ?"
+}
+
+func (cols NewsContentHelper) InIdWT() string {
+	return "news_content.id in ?"
+}
+
+func (cols NewsContentHelper) NeId() string {
+	return "id != ?"
+}
+
+func (cols NewsContentHelper) NeIdWT() string {
+	return "news_content.id != ?"
+}
+
+func (cols NewsContentHelper) GtId() string {
+	return "id > ?"
+}
+
+func (cols NewsContentHelper) GtIdWT() string {
+	return "news_content.id > ?"
+}
+
+func (cols NewsContentHelper) GteId() string {
+	return "id >= ?"
+}
+
+func (cols NewsContentHelper) GteIdWT() string {
+	return "news_content.id >= ?"
+}
+
+func (cols NewsContentHelper) LtId() string {
+	return "id < ?"
+}
+
+func (cols NewsContentHelper) LtIdWT() string {
+	return "news_content.id < ?"
+}
+
+func (cols NewsContentHelper) LteId() string {
+	return "id <= ?"
+}
+
+func (cols NewsContentHelper) LteIdWT() string {
+	return "news_content.id <= ?"
 }
 
 func (cols NewsContentHelper) TableName() string {

@@ -40,6 +40,14 @@ func (cols {{$clsName}}Helper) Eq{{Mapper $col.Name}}WT() string {
 	return "{{ $tableName }}.{{ $col.Name }} = ?"
 }
 
+func (cols {{$clsName}}Helper) In{{Mapper $col.Name}}() string {
+	return "{{ $col.Name }} in ?"
+}
+
+func (cols {{$clsName}}Helper) In{{Mapper $col.Name}}WT() string {
+	return "{{ $tableName }}.{{ $col.Name }} in ?"
+}
+
 func (cols {{$clsName}}Helper) Ne{{Mapper $col.Name}}() string {
 	return "{{ $col.Name }} != ?"
 }
